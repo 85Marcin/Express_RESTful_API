@@ -13,17 +13,17 @@ const createRouter = (data) => {
   })
 
   router.post("/", (req, res) => {
-    teas.push(req.body)
+    data.push(req.body)
     res.json(data)
   })
 
   router.delete("/:id", (req, res) => {
-    teas.splice(req.params.id, 1)
+    data.splice(req.params.id, 1)
     res.json(data)
   })
 
   router.put("/:id", (req, res) => {
-    teas[req.params.id] = req.body
+    data[req.params.id] = req.body
     res.json(data)
   })
   return router
