@@ -13,30 +13,6 @@ const teas = [
 app.use(cors())
 app.use(express.json())
 
-app.get("/api/teas", (req, res) => {
-  res.json(teas)
-})
-
-app.get("/api/teas/:id", (req, res) => {
-  //id is the index , there is no database
-  res.json(teas[req.params.id])
-})
-
-app.post("/api/teas", (req, res) => {
-  teas.push(req.body)
-  res.json(teas)
-})
-
-app.delete("/api/teas/:id", (req, res) => {
-  teas.splice(req.params.id, 1)
-  res.json(teas)
-})
-
-app.put("/api/teas/:id", (req, res) => {
-  teas[req.params.id] = req.body
-  res.json(teas)
-})
-
 app.listen(9000, function () {
   console.log(`App running on port ${this.address().port}`)
 })
